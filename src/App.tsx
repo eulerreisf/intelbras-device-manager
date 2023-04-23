@@ -1,26 +1,22 @@
-import React from "react";
-import logo from "./logo.svg";
+import intelbrasIcon from "/intelbras.ico";
+import { useDeviceFetcher } from "../src/services/Devices";
 import "./App.css";
 
-function App() {
+const App = () => {
+  const { device, loading } = useDeviceFetcher();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
+    <>
+      <div>
+        <a>
+          <img src={intelbrasIcon} className="logo" alt="Intelbras logo" />
         </a>
-      </header>
-    </div>
+      </div>
+      <h1>Device Manager</h1>
+      <button>refetch</button>
+      {!loading && <div>{device}</div>}
+    </>
   );
-}
+};
 
 export default App;
