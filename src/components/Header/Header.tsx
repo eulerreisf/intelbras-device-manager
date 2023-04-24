@@ -15,7 +15,7 @@ const Header = () => {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="fixed">
         <Toolbar>
           <IntelbrasLogo />
           <IconButton color="info" aria-label="logout" onClick={handleLogout}>

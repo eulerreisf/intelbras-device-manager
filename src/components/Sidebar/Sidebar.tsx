@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { List, ListItem } from "@mui/material";
 
 import { Settings, Home } from "@mui/icons-material";
@@ -23,6 +24,8 @@ export interface SidebarProps {
 }
 
 export default function Sidebar({ isOpen = true }: SidebarProps) {
+  const navigate = useNavigate();
+
   const menuItems = [
     { text: "Pagina Inicial", icon: <Home />, page: "/" },
     { text: "Configurações", icon: <Settings />, page: "/config" },
@@ -30,18 +33,22 @@ export default function Sidebar({ isOpen = true }: SidebarProps) {
 
   const handleRenderItem = (item: any) => renderItem(item);
 
-  function renderItem(item: any) {
+  const renderItem = (item: any) => {
+    const handleClick = () => {
+      navigate(item.page);
+    };
+
     return (
       <>
         <ListItem disablePadding>
-          <StyledListButton open={isOpen}>
+          <StyledListButton open={isOpen} onClick={handleClick}>
             <StyledListIcon open={isOpen}>{item.icon}</StyledListIcon>
             <StyledListText open={isOpen}>{item.text}</StyledListText>
           </StyledListButton>
         </ListItem>
       </>
     );
-  }
+  };
 
   return (
     <StyledDrawer variant="permanent" anchor="left" open>
