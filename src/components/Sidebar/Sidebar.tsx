@@ -20,7 +20,7 @@ export type ListItemProps = {
 };
 
 export interface SidebarProps {
-  isOpen: boolean;
+  isOpen?: boolean;
 }
 
 export default function Sidebar({ isOpen = true }: SidebarProps) {

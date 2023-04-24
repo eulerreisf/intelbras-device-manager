@@ -1,5 +1,6 @@
 export type TypographyComponentType = {
   text: string;
+  style?: any;
   variant:
   | "h1"
   | "h2"
