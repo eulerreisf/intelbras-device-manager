@@ -1,12 +1,27 @@
 import React from "react";
 import Layout from "../components/Layout";
+import DeviceForm from "./DeviceForm";
+import { WrapperContent } from "./styles";
+import DisplayDevice from "./DisplayDevice";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+const Content = ({ children }) => (
+  <WrapperContent isOpen>{children}</WrapperContent>
+);
 
 const Container = () => {
-  const children = () => <h1>Ola</h1>;
   return (
-    <>
-      <Layout children={children} />
-    </>
+    <Router>
+      <>
+        <Layout />
+        <Content>
+          <Routes>
+            <Route path="/" element={<DisplayDevice />} />
+            <Route path="/config" element={<DeviceForm />} />
+          </Routes>
+        </Content>
+      </>
+    </Router>
   );
 };
 
