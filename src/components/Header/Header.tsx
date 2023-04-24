@@ -1,14 +1,15 @@
 import * as React from "react";
 import { AppBar, Box, Toolbar, IconButton } from "@mui/material";
 import Logout from "@mui/icons-material/Logout";
-import { useLogoutFetcher } from "../../services";
+import { useLogoutFetcher, useLoginFetcher } from "../../services";
 import { IntelbrasLogo } from "../../components";
 
 const Header = () => {
   const { logout } = useLogoutFetcher();
+  const { login } = useLoginFetcher();
 
   const handleLogout = async () => {
-    await logout();
+    await login();
     //TODO
     //set authenticated false
   };

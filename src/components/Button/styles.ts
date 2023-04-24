@@ -23,7 +23,7 @@ export const StyledButton = styled( Button ) <IButton>`
       case 'primary':
         return `
           background: ${props.disabled ? '#6E5E0014' : '#00a335'};
-          color:  ${props.disabled ? '#A0AEC0' : 'blue'}!important;
+          color:  ${props.disabled ? '#A0AEC0' : 'white'}!important;
           min-width: 123px;
           &:hover{
             background: ${'#00863F'};
