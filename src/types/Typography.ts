@@ -16,3 +16,4 @@ export type TypographyComponentType = {
   | "overline"
   | "inherit";
 };
+
