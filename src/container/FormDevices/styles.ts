@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 import { Drawer, Typography } from '@mui/material';
 
-export const StyledDrawer = styled(Drawer)`
+export const StyledDrawer = styled( Drawer )`
   .MuiDrawer-root,
   .MuiDrawer-paper {
     width: 448px;
@@ -10,7 +10,7 @@ export const StyledDrawer = styled(Drawer)`
   }
 `;
 
-export const StyledTypography = styled(Typography)``;
+export const StyledTypography = styled( Typography )``;
 
 export const StyledHeader = styled.div`
   display: flex;
@@ -20,14 +20,9 @@ export const StyledHeader = styled.div`
   justify-content: space-between;
 `;
 
-export const StyledChildren = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-top: 30px;
-  margin-left: 12px;
-  margin-right: 12px;
-  align-items: flex-start;
-  justify-content: space-between;
+export const StyledContent = styled.div`
+  margin-left: 50px;
+  align-items: center;
 `;
 
 export const StyledInputsContainer = styled.div`
@@ -35,10 +30,12 @@ export const StyledInputsContainer = styled.div`
   width: 100%;
   margin-right: 10px;
 `;
-export const StyledButton = styled.div`
+export const StyledButtonConteiner = styled.div`
   display: flex;
-  margin-right: 12px;
-  margin-top: 10px;
+  flex-direction: row;
   align-items: center;
-  justify-content: end;
+  margin-left: 150px;
+  margin-top: 20px;
+  width: 300px;
+  justify-content: space-between;
 `;
